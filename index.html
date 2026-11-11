@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Jewoo Shin</title>
+    <meta name="author" content="Jewoo Shin">
+    <meta name="description" content="Jewoo Shin — researcher at KAIST working on physics-based simulation and computer graphics.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Browser-tab icon: put your icon file at images/favicon.png (a square PNG, e.g. 64x64) -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+
+  <body>
+    <main class="page">
+      <header class="bio">
+        <div class="bio-text">
+          <h1 class="name">Jewoo Shin</h1>
+          <p>
+            I'm a M.S. student in School of Computing at <a href="https://www.kaist.ac.kr/">KAIST</a>, advised by Prof. Jinah Park.
+            I received my B.S. degree in School of Computing at <a href="https://www.kaist.ac.kr/">KAIST</a> in 2025. 
+            My research interests are in Computer Graphics. Especially, I am interested in real-time simulation and differentiable physics.
+          </p>
+          <p class="bio-links">
+            <a href="mailto:tsxcs@kaist.ac.kr">Email</a> &nbsp;/&nbsp;
+            <a href="data/CV_JewooShin.pdf">CV</a> &nbsp;/&nbsp;
+            <a href="https://scholar.google.com/citations?user=vNfgpdQAAAAJ&hl=ko">Scholar</a> &nbsp;/&nbsp;
+            <a href="https://github.com/tsxcs">Github</a>
+          </p>
+        </div>
+        <div class="bio-photo">
+          <img src="images/profile.jpeg" alt="Jewoo Shin" width="405" height="405">
+        </div>
+      </header>
+
+      <section class="section-header">
+        <h2>News</h2>
+        <!-- Newest first. Copy a <li> line to add an item. -->
+        <ul class="news">
+          <li><span class="news-date">2026.10</span> A paper about haptic rendering of deformable objects with XPBD framework has been accepted to <a href="https://asiahaptics2026.org/">AsiaHaptics 2026</a>.</li>
+          <li><span class="news-date">2026.9</span> An interview about OmniBody has been published on <a href="https://80.lv/articles/this-soft-body-simulation-can-cut-peel-break-objects-in-real-time">80 Level</a>.</li>
+          <li><span class="news-date">2026.05</span> A poster of <a href="/siggraph2026-poster/">OmniBody</a> has been accepted to SIGGRAPH 2026, Los Angeles.</li>
+        </ul>
+      </section>
+
+      <section class="section-header">
+        <h2>Publications</h2>
+      </section>
+
+      <section class="papers">
+      <article class="paper highlighted">
+        <div class="paper-media">
+          <video class="thumb-video" src="images/omnibody.mp4" autoplay muted loop playsinline preload="auto"></video>
+        </div>
+        <div class="paper-info">
+          <a href="/siggraph2026-poster/" class="papertitle">OmniBody: Discretized Local Constraints for Real-Time Destructible and Flexible Soft Bodies Simulation</a>
+          <div class="paper-authors"><strong>Jewoo Shin</strong>, Jinah Park</div>
+          <div class="paper-venue"><em>SIGGRAPH Posters</em>, 2026</div>
+          <div class="paper-links"><a href="/siggraph2026-poster/">project page</a> / <a href="https://dl.acm.org/doi/10.1145/3799825.3818765">paper</a></div>
+          <p class="paper-desc">Discretized local constraints enable real-time simulation of soft bodies that can stretch, tear, and be cut.</p>
+        </div>
+      </article>
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          Website template from <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron</a>.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      document.querySelectorAll('.paper').forEach(function(card) {
+        var thumb = card.querySelector('.one');
+        if (!thumb) return;
+        var video = thumb.querySelector('.two video');
+        if (video) {
+          card.addEventListener('mouseenter', function() {
+            video.play().catch(function() {});
+          });
+          card.addEventListener('mouseleave', function() {
+            video.pause();
+          });
+        }
+        thumb.addEventListener('touchstart', function() {
+          var active = !card.classList.contains('hover-active');
+          document.querySelectorAll('.paper.hover-active').forEach(function(other) {
+            other.classList.remove('hover-active');
+            var ov = other.querySelector('.two video');
+            if (ov) ov.pause();
+          });
+          if (active) {
+            card.classList.add('hover-active');
+            if (video) video.play().catch(function() {});
+          }
+        }, {passive: true});
+      });
+    </script>
+  </body>
+</html>
