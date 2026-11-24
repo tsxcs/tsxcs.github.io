@@ -272,6 +272,24 @@ h2 {
   font-weight: 700;
 }
 
+.awards {
+  margin: 10px 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.awards li {
+  margin: 10px 0;
+}
+
+.award-name {
+  font-weight: 700;
+}
+
+.award-venue {
+  margin-top: 2px;
+}
+
 .site-footer {
   text-align: right;
   font-size: small;
