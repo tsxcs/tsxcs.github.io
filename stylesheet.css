@@ -363,3 +363,50 @@ h2 {
     font-size: 15px;
   }
 }
+
+/* ---------- Demo video subpages ---------- */
+.demo-header {
+  padding: 16px;
+}
+
+.demo-header .back {
+  font-size: 13px;
+}
+
+.demo-header h1 {
+  margin: 12px 0 6px;
+  font-weight: 400;
+  font-size: 26px;
+}
+
+.demo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 0 16px;
+}
+
+.demo {
+  margin: 0;
+}
+
+.demo video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+  border-radius: 4px;
+}
+
+.demo figcaption {
+  margin-top: 8px;
+}
+
+.demo-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.demo-desc {
+  margin: 4px 0 0;
+}
